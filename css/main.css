@@ -1,0 +1,227 @@
+:root {
+  --slate-900: #133041;
+  --slate-700: #4e6e7e;
+  --slate-500: #6b94a8;
+  --slate-100: #e4f4fd;
+
+  --lime: #d8db2f;
+  --diffused-lime: #eced97;
+  --transparent-lime: #d8db2f26;
+}
+
+body {
+  background-color: var(--slate-100);
+}
+
+button {
+  border: none;
+  outline: none;
+  background: none;
+}
+
+.mortgage-calculator {
+  background-color: white;
+  width: 100%;
+  padding: 32px 24px;
+  display: flex;
+  gap: 24px;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.mortgage-calculator__header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+.mortgage-calculator__title {
+  font-family: Plus Jakarta Sans;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 125%;
+  margin: 0;
+  color: var(--slate-900);
+}
+
+.mortgage-calculator__clear-all-button {
+  font-family: Plus Jakarta Sans;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  text-decoration: underline;
+  text-decoration-style: solid;
+  text-decoration-thickness: 0%;
+  color: var(--slate-700);
+}
+
+.mortgage-calculator__clear-all-button:hover {
+  cursor: pointer;
+  color: var(--slate-900);
+}
+
+.mortgage-calculator__inputs-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.mortgage-calculator__details-inputs-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.mortgage-calculator__label {
+  font-family: Plus Jakarta Sans;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--slate-700);
+}
+
+.input-mega-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.input-wrapper {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid var(--slate-500);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.input-wrapper:hover {
+  border-color: var(--slate-900);
+}
+
+.input-wrapper__prefix {
+  background-color: var(--slate-100);
+  padding: 12px 16px;
+
+  font-family: Plus Jakarta Sans;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 125%;
+  color: var(--slate-700);
+}
+
+.input-wrapper__input {
+  width: 100%;
+  border: none;
+  padding: 12px 16px;
+  outline: none;
+
+  font-family: Plus Jakarta Sans;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 125%;
+  letter-spacing: 0%;
+}
+
+/* Pour Chrome, Safari, Edge, et Opera */
+.input-wrapper__input::-webkit-inner-spin-button,
+.input-wrapper__input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Pour Firefox */
+.input-wrapper__input {
+  -moz-appearance: textfield;
+}
+
+.input-wrapper:has(.input-wrapper__input:focus) {
+  border-color: var(--lime);
+}
+
+.input-wrapper:has(.input-wrapper__input:focus) .input-wrapper__prefix {
+  background-color: var(--lime);
+  color: var(--slate-900);
+}
+
+.radio-input-wrapper-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.radio-input-wrapper:has(.radio-input-wrapper__input:checked) {
+  border: 1px solid var(--lime);
+  background-color: var(--transparent-lime);
+}
+
+.radio-input-wrapper {
+  cursor: pointer;
+  padding: 12px 16px;
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  border: 1px solid var(--slate-500);
+  border-radius: 4px;
+}
+
+.radio-input-wrapper__input {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--slate-700);
+  border-radius: 50%;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.radio-input-wrapper__input:checked {
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--lime);
+  border-radius: 50%;
+  position: relative;
+}
+
+.radio-input-wrapper__input:checked::after {
+  content: " ";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 10px;
+  width: 10px;
+  background-color: var(--lime);
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+
+.radio-input-wrapper__label {
+  font-family: Plus Jakarta Sans;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 125%;
+  letter-spacing: 0%;
+}
+
+.mortgage-calculator__submit {
+  width: 100%;
+  padding: 16px 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 12px;
+  background-color: var(--lime);
+  border-radius: 28px;
+
+  font-family: Plus Jakarta Sans;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 125%;
+  color: var(--slate-900);
+}
+
+.mortgage-calculator__submit:hover {
+  cursor: pointer;
+  background-color: var(--diffused-lime);
+}
