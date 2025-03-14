@@ -8,17 +8,32 @@
   --lime: #d8db2f;
   --diffused-lime: #eced97;
   --transparent-lime: #d8db2f26;
+
+  --red: #d73328;
 }
 
 .hidden {
   display: none !important;
 }
 
+.error-message {
+  color: var(--red);
+  font-family: Plus Jakarta Sans;
+  font-weight: 500;
+  font-size: 14px;
+  display: none;
+}
+
 body {
   background-color: var(--slate-100);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
 main {
+  max-width: 1008px;
   background-color: white;
   overflow: hidden;
   display: flex;
@@ -29,6 +44,7 @@ button {
   border: none;
   outline: none;
   background: none;
+  padding: 0;
 }
 
 .mortgage-calculator {
@@ -94,6 +110,7 @@ button {
 }
 
 .input-mega-wrapper {
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -112,6 +129,7 @@ button {
 }
 
 .input-wrapper__prefix {
+  cursor: pointer;
   background-color: var(--slate-100);
   padding: 12px 16px;
 
@@ -120,6 +138,12 @@ button {
   font-size: 18px;
   line-height: 125%;
   color: var(--slate-700);
+}
+
+.input-wrapper__prefix-select {
+  appearance: none;
+  border: none;
+  outline: none;
 }
 
 .input-wrapper__input {
@@ -133,6 +157,19 @@ button {
   font-size: 18px;
   line-height: 125%;
   letter-spacing: 0%;
+}
+
+.input-mega-wrapper.error .input-wrapper {
+  border-color: var(--red);
+}
+
+.input-mega-wrapper.error .input-wrapper__prefix {
+  background-color: var(--red);
+  color: white;
+}
+
+.input-mega-wrapper.error .error-message {
+  display: block;
 }
 
 /* Pour Chrome, Safari, Edge, et Opera */
@@ -175,6 +212,10 @@ button {
   gap: 16px;
   border: 1px solid var(--slate-500);
   border-radius: 4px;
+}
+
+.radio-input-wrapper:hover {
+  border-color: var(--lime);
 }
 
 .radio-input-wrapper__input {
@@ -309,7 +350,39 @@ button {
   line-height: 150%;
 }
 
-/* @media screen and (min-width: 768px) {
+.results-monthly-repayments {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  padding-bottom: 16px;
+  border-bottom: 1px solid #9abed540;
+  margin-bottom: 16px;
+}
+
+.results-total-repayments {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.results-results-monthly-repayment-price {
+  font-family: Plus Jakarta Sans;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 100%;
+  color: var(--lime);
+}
+
+.results-results-total-repayment-price {
+  font-family: Plus Jakarta Sans;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 125%;
+  color: white;
+}
+
+@media screen and (min-width: 768px) {
   body {
     padding: 40px;
   }
@@ -317,4 +390,62 @@ button {
   main {
     border-radius: 24px;
   }
-} */
+
+  .mortgage-calculator {
+    padding: 40px;
+    gap: 40px;
+  }
+
+  .mortgage-calculator__header {
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .mortgage-calculator__details-inputs-wrapper {
+    flex-direction: row;
+  }
+
+  .mortgage-calculator__submit {
+    width: auto;
+  }
+
+  .results-wrapper {
+    padding: 40px;
+  }
+
+  .results-results-repayment {
+    padding: 32px;
+  }
+
+  .results-monthly-repayments {
+    padding-bottom: 32px;
+    margin-bottom: 32px;
+  }
+
+  .results-results-monthly-repayment-price {
+    font-size: 56px;
+  }
+}
+
+@media screen and (min-width: 1124px) {
+  main {
+    flex-direction: row;
+  }
+
+  .mortgage-calculator {
+    width: 50%;
+
+    justify-content: center;
+  }
+
+  .results-wrapper {
+    width: 50%;
+
+    border-radius: 0 0 0 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

@@ -32,9 +32,15 @@
               Mortgage Amount
             </label>
             <div class="input-wrapper">
-              <label class="input-wrapper__prefix" for="mortgage-amount"
-                >£</label
+              <select
+                class="input-wrapper__prefix input-wrapper__prefix-select"
+                name="mortgage-currency"
+                id="mortgage-currency"
               >
+                <option value="£">£</option>
+                <option value="$">$</option>
+                <option value="€">€</option>
+              </select>
               <input
                 class="input-wrapper__input"
                 type="number"
@@ -43,6 +49,7 @@
                 id="mortgage-amount"
               />
             </div>
+            <p class="error-message">This field is required</p>
           </div>
           <div class="mortgage-calculator__details-inputs-wrapper">
             <div class="input-mega-wrapper">
@@ -60,6 +67,7 @@
                   >years</label
                 >
               </div>
+              <p class="error-message">This field is required</p>
             </div>
             <div class="input-mega-wrapper">
               <label class="mortgage-calculator__label" for="interest-rate">
@@ -77,6 +85,7 @@
                   >%</label
                 >
               </div>
+              <p class="error-message">This field is required</p>
             </div>
           </div>
           <div class="input-mega-wrapper">
@@ -86,6 +95,7 @@
                 <input
                   class="radio-input-wrapper__input"
                   type="radio"
+                  value="repayment"
                   name="mortgage-type"
                   id="mortgage-type-repayment"
                 />
@@ -95,12 +105,14 @@
                 <input
                   class="radio-input-wrapper__input"
                   type="radio"
+                  value="interest"
                   name="mortgage-type"
                   id="mortgage-type-interest"
                 />
                 <p class="radio-input-wrapper__label">Interest Only</p>
               </label>
             </div>
+            <p class="error-message">This field is required</p>
           </div>
         </div>
         <button class="mortgage-calculator__submit" type="submit">
@@ -121,7 +133,7 @@
       </form>
 
       <div class="results-wrapper">
-        <div class="results-instructions-wrapper hidden">
+        <div class="results-instructions-wrapper">
           <div class="results-instructions-image-container">
             <svg
               width="193"
@@ -420,7 +432,7 @@
           </p>
         </div>
 
-        <div class="results-results">
+        <div class="results-results hidden">
           <div class="results-results-text">
             <h2 class="results-results-title">Your results</h2>
 
@@ -436,14 +448,24 @@
               <p class="results-results-repayment-title">
                 Your monthly repayments
               </p>
-              <p class="price" id="monthly-repayments-price">£1,797.74</p>
+              <p
+                class="results-results-monthly-repayment-price"
+                id="monthly-repayments-price"
+              >
+                £1,797.74
+              </p>
             </div>
 
             <div class="results-total-repayments">
               <p class="results-results-repayment-title">
                 Total you'll repay over the term
               </p>
-              <p class="price" id="total-repayments-price">£539,322.94</p>
+              <p
+                class="results-results-total-repayment-price"
+                id="total-repayments-price"
+              >
+                £539,322.94
+              </p>
             </div>
           </div>
         </div>
